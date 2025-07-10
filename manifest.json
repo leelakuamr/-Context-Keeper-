@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Context Keeper",
+  "version": "1.0",
+  "description": "Organize your browser tabs into contexts",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "action": {
+  "default_popup": "popup.html"
+}
+} 

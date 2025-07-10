@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400, initial-scale=1">
+  <title>Context Keeper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Context Keeper</h1>
+      <p>Organize your tabs into contexts</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Save Current Context -->
+      <div class="section">
+        <h2>Save Current Context</h2>
+        <div class="input-group">
+          <input type="text" id="contextName" placeholder="Enter context name (e.g., Work Project, Vacation Planning)">
+          <button id="saveContext" class="btn-primary">Save Context</button>
+        </div>
+        
+        <!-- Smart Suggestions -->
+        <div class="smart-suggestions" id="smartSuggestions">
+          <div class="suggestions-label">Smart Suggestions:</div>
+          <div class="suggestion-chips" id="suggestionChips"></div>
+        </div>
+
+        <!-- Categories & Tags -->
+        <div class="categories-section">
+          <div class="category-selector">
+            <label for="contextCategory">Category:</label>
+            <select id="contextCategory">
+              <option value="">Select Category</option>
+              <option value="work">💼 Work</option>
+              <option value="personal">👤 Personal</option>
+              <option value="shopping">🛒 Shopping</option>
+              <option value="research">🔍 Research</option>
+              <option value="entertainment">🎮 Entertainment</option>
+              <option value="education">📚 Education</option>
+              <option value="social">📱 Social</option>
+              <option value="other">📁 Other</option>
+            </select>
+          </div>
+          
+          <div class="tags-input">
+            <label for="contextTags">Tags:</label>
+            <input type="text" id="contextTags" placeholder="Add tags (e.g., urgent, project, #important)">
+            <div class="tags-hint">Press Enter to add tags</div>
+          </div>
+        </div>
+
+        <div class="tab-count">
+          <span id="tabCount">0</span> tabs will be saved
+        </div>
+      </div>
+
+      <!-- Load Context -->
+      <div class="section">
+        <h2>Load Context</h2>
+        
+        <!-- Search & Filter -->
+        <div class="search-filter">
+          <input type="text" id="contextSearch" placeholder="Search contexts...">
+          <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="work">💼 Work</option>
+            <option value="personal">👤 Personal</option>
+            <option value="shopping">🛒 Shopping</option>
+            <option value="research">🔍 Research</option>
+            <option value="entertainment">🎮 Entertainment</option>
+            <option value="education">📚 Education</option>
+            <option value="social">📱 Social</option>
+            <option value="other">📁 Other</option>
+          </select>
+        </div>
+
+        <div class="context-list" id="contextList">
+          <div class="no-contexts">No saved contexts yet</div>
+        </div>
+      </div>
+
+      <!-- Advanced Loading Options -->
+      <div class="section">
+        <h2>Advanced Loading</h2>
+        <div class="loading-options">
+          <div class="option-group">
+            <label>
+              <input type="radio" name="loadMode" value="replace" checked>
+              Replace current tabs
+            </label>
+            <label>
+              <input type="radio" name="loadMode" value="newWindow">
+              Load in new window
+            </label>
+            <label>
+              <input type="radio" name="loadMode" value="background">
+              Load in background
+            </label>
+            <label>
+              <input type="radio" name="loadMode" value="merge">
+              Merge with current tabs
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section">
+        <h2>Quick Actions</h2>
+        <div class="quick-actions">
+          <button id="closeAllTabs" class="btn-secondary">Close All Tabs</button>
+          <button id="organizeTabs" class="btn-secondary">Auto-Organize</button>
+          <button id="saveQuick" class="btn-secondary">Quick Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smart Notifications -->
+    <div class="notifications-panel" id="notificationsPanel">
+      <div class="notification-header">
+        <span>Smart Notifications</span>
+        <button id="clearNotifications" class="btn-small">Clear All</button>
+      </div>
+      <div class="notifications-list" id="notificationsList"></div>
+    </div>
+
+    <footer>
+      <div class="stats">
+        <span id="totalContexts">0</span> contexts • <span id="totalTabs">0</span> saved tabs
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

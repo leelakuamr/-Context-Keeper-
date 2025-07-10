@@ -1,0 +1,102 @@
+/* Remove all .share-menu and share-related styles */
+
+/* Share menu styles */
+.share-menu {
+  position: absolute;
+  background: #f6f9ff;
+  border: 1px solid #b3c6e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  z-index: 1000;
+  min-width: 150px;
+  max-width: 220px;
+  padding: 10px 0 10px 0;
+  margin-top: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  font-family: inherit;
+  opacity: 1;
+  transform: translateX(0);
+  animation: shareSidebarIn 0.22s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+.share-menu::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 16px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 8px solid #f6f9ff;
+  filter: drop-shadow(-1px 0 1px #b3c6e0);
+}
+.share-menu-animating {
+  opacity: 0 !important;
+  transform: translateX(16px) !important;
+  animation: none !important;
+}
+@keyframes shareSidebarIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.share-menu .close-share-menu {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #5a7bd6;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0 4px;
+  line-height: 1;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
+}
+.share-menu .close-share-menu:hover {
+  background: #e3eaff;
+  color: #1a3fa6;
+}
+.share-menu button:not(.close-share-menu) {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: none !important;
+  border: none !important;
+  text-align: left !important;
+  padding: 10px 18px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  color: #234 !important;
+  border-radius: 0 !important;
+  transition: background 0.15s, color 0.15s !important;
+}
+.share-menu button:not(.close-share-menu):hover {
+  background: #e3eaff !important;
+  color: #1a3fa6 !important;
+}
+.share-menu button[data-action="email"] {
+  color: #1761a0 !important;
+  font-weight: 500;
+}
+.share-menu button[data-action="email"]:hover {
+  background: #d0e7ff !important;
+  color: #0a3a6e !important;
+}
+.share-menu svg {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  opacity: 0.85;
+} 

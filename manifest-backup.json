@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Context Keeper",
+  "version": "1.0",
+  "description": "Organize your browser tabs into contexts and never lose your work sessions",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Context Keeper"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/ck-icon-16.png",
+    "32": "icons/ck-icon-32.png",
+    "48": "icons/ck-icon-48.png",
+    "128": "icons/ck-icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+} 
