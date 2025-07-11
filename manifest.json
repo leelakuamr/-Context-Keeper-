@@ -8,6 +8,12 @@
     "storage"
   ],
   "action": {
-  "default_popup": "popup.html"
-}
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/ck-icon-16.png",
+    "32": "icons/ck-icon-32.png",
+    "48": "icons/ck-icon-48.png",
+    "128": "icons/ck-icon-128.png"
+  }
 } 
