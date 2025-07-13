@@ -9,4 +9,4 @@ All information about your tabs and contexts is stored locally in your browser a
 - We do **not** sell or transfer user data to third parties.
 - All extension functionality operates entirely within your browser.
 
-If you have any questions or concerns about privacy, please contact us at[venkateshe511@gmail.com]. 
+If you have any questions or concerns about privacy, please contact us at venkateshe511@gmail.com. 
